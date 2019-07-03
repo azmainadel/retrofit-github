@@ -9,6 +9,7 @@ import android.widget.Toast;
 import com.example.firsttest.api.model.GithubRepo;
 import com.example.firsttest.api.service.GithubClient;
 import com.example.firsttest.api.constants.Constants;
+import com.example.firsttest.api.service.ServiceGenerator;
 import com.example.firsttest.ui.adapter.GithubRepoAdapter;
 
 import java.util.List;
@@ -33,16 +34,11 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 //        ButterKnife.bind(this);
-
         listView = (ListView) findViewById(R.id.repo_list);
 
-        Retrofit.Builder builder = new Retrofit.Builder()
-                .baseUrl(Constants.BASE_URL)
-                .addConverterFactory(GsonConverterFactory.create());
+        GithubClient githubClient = ServiceGenerator
+                .createService(GithubClient.class);
 
-        Retrofit retrofit = builder.build();
-
-        GithubClient githubClient = retrofit.create(GithubClient.class);
         Call<List<GithubRepo>> call = githubClient.repos(Constants.USER);
 
         call.enqueue(new Callback<List<GithubRepo>>() {
