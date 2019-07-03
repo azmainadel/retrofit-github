@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.firsttest.ui.adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
@@ -7,6 +7,9 @@ import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 import android.widget.TextView;
 
+
+import com.example.firsttest.R;
+import com.example.firsttest.api.model.GithubRepo;
 
 import java.util.List;
 

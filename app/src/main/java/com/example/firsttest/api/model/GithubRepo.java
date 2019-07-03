@@ -1,4 +1,4 @@
-package com.example.firsttest;
+package com.example.firsttest.api.model;
 
 public class GithubRepo {
 

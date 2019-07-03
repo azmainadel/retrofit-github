@@ -1,4 +1,4 @@
-package com.example.firsttest.constants;
+package com.example.firsttest.api.constants;
 
 public class Constants {
 

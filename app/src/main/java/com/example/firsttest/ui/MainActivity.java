@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import com.example.firsttest.constants.Constants;
+import com.example.firsttest.api.model.GithubRepo;
+import com.example.firsttest.api.service.GithubClient;
+import com.example.firsttest.api.constants.Constants;
+import com.example.firsttest.ui.adapter.GithubRepoAdapter;
 
 import java.util.List;
 
@@ -21,13 +24,17 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class MainActivity extends AppCompatActivity {
 
-    @BindView(R.id.repo_list) ListView listView;
+//    @BindView(R.id.repo_list) ListView listView;
+
+    private ListView listView;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        ButterKnife.bind(this);
+//        ButterKnife.bind(this);
+
+        listView = (ListView) findViewById(R.id.repo_list);
 
         Retrofit.Builder builder = new Retrofit.Builder()
                 .baseUrl(Constants.BASE_URL)

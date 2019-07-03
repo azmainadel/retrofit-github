@@ -1,4 +1,6 @@
-package com.example.firsttest;
+package com.example.firsttest.api.service;
+
+import com.example.firsttest.api.model.GithubRepo;
 
 import java.util.List;
 
